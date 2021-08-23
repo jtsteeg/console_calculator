@@ -6,14 +6,34 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Please type a number");
-            var num1 = Console.ReadLine();
-            Console.WriteLine("Please type another number");
-            var num2 = Console.ReadLine();
-            Console.WriteLine($"The numbers you have typed are {num1} and {num2} ");
-            Console.WriteLine("Please type the function you would like applied");
-            var Operator = Console.ReadLine();
-            Console.WriteLine($"The function you would like applied is {Operator}");
+            try
+            {
+                int num1 = Int32.Parse(Console.ReadLine());
+            }
+            catch (System.FormatException ex)
+            {
+                Console.WriteLine($"you can't do that! {ex}");
+                System.Environment.Exit(0);
+            }
+            Console.WriteLine("Please type a 2nd number");
+            try
+            {
+                int num2 = Int32.Parse(Console.ReadLine());
+            }
+            catch (System.FormatException ex)
+            {
+                Console.WriteLine($"you can't do that! {ex}");
+                System.Environment.Exit(0);
+            }
+
+            //bool isnumber = int.TryParse(Console.ReadLine(), out num1);
+            // Console.WriteLine("Please type another number");
+            //int num2 = Console.ReadLine();
+            //Console.WriteLine("Please type the operation you would like applied");
+            //string Operator = Console.ReadLine();
+
         }
     }
 }
