@@ -8,7 +8,7 @@ namespace Calculator
         {
             int num1 = 0;
             int num2 = 0;
-            Console.WriteLine("Please type a number");
+            Console.WriteLine("Please enter a number"); 
             try
             {
                 num1 = Int32.Parse(Console.ReadLine());
@@ -18,7 +18,7 @@ namespace Calculator
                 Console.WriteLine($"you can't do that! {ex}");
                 System.Environment.Exit(0);
             }
-            Console.WriteLine("Please type a 2nd number");
+            Console.WriteLine("Please enter a 2nd number");
             try
             {
                 num2 = Int32.Parse(Console.ReadLine());
@@ -28,7 +28,7 @@ namespace Calculator
                 Console.WriteLine($"you can't do that! {ex}");
                 System.Environment.Exit(0);
             }
-            Console.WriteLine("Please type the operation you would like applied");
+            Console.WriteLine("Please enter the operation you would like performed: +, -, *, /");
             string Operator = Console.ReadLine();
             while (true)
             {
