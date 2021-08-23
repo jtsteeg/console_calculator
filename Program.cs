@@ -30,24 +30,34 @@ namespace Calculator
             }
             Console.WriteLine("Please type the operation you would like applied");
             string Operator = Console.ReadLine();
-
-            if(Operator == "+")
+            while (true)
             {
-                Console.WriteLine(num1 + num2);
+                if (Operator == "+")
+                {
+                    Console.WriteLine(num1 + num2);
+                    break;
+                }
+                else if (Operator == "-")
+                {
+                    Console.WriteLine(num1 - num2);
+                    break;
+                }
+                else if (Operator == "/")
+                {
+                    Console.WriteLine(num1 / num2);
+                    break;
+                }
+                else if (Operator == "*")
+                {
+                    Console.WriteLine(num1 * num2);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry, we do not yet support that operation. Please enter one of the following: +, -, *, or /");
+                    Operator = Console.ReadLine();
+                }
             }
-            else if (Operator == "-")
-            {
-                Console.WriteLine(num1 - num2);
-            }
-            else if (Operator == "/")
-            {
-                Console.WriteLine(num1 / num2);
-            }
-            else if (Operator == "*")
-            {
-                Console.WriteLine(num1 * num2);
-            }
-
         }
     }
 }
