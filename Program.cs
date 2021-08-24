@@ -16,7 +16,7 @@ namespace Calculator
             catch (System.FormatException ex)
             {
                 Console.WriteLine($"you can't do that! {ex}");
-                System.Environment.Exit(0);
+                System.Environment.Exit(1);
             }
             Console.WriteLine("Please enter a 2nd number");
             try
@@ -26,7 +26,7 @@ namespace Calculator
             catch (System.FormatException ex)
             {
                 Console.WriteLine($"you can't do that! {ex}");
-                System.Environment.Exit(0);
+                System.Environment.Exit(1);
             }
             Console.WriteLine("Please enter the operation you would like performed: +, -, *, /");
             string Operator = Console.ReadLine();
@@ -44,6 +44,11 @@ namespace Calculator
                 }
                 else if (Operator == "/")
                 {
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("you can't divide by zero!");
+                        System.Environment.Exit(1);
+                    }
                     Console.WriteLine(num1 / num2);
                     break;
                 }
